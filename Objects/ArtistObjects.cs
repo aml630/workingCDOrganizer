@@ -39,7 +39,14 @@ namespace Artists.Objects
 
        public List<CD> GetAllArtistsCDs()
        {
-         return _CDs;
+         List<CD> CDs = CD.GetAllCDs();
+         List<CD> results = new List<CD> {};
+           foreach (var CD in CDs) {
+             if (this.IsArtist(CD)){
+               results.Add(CD);
+             }
+         }
+         return results;
        }
 
        public void AddArtistCD(CD cd)
@@ -51,6 +58,17 @@ namespace Artists.Objects
         {
           return AlbumSearcher[name];
         }
+
+         public bool IsArtist(CD CurrentCD)
+         {
+           string MyName = CurrentCD.GetArtist();
+           if (MyName == _name)
+           {
+             return true;
+           } else {
+             return false;
+           }
+         }
 
     }
 }
