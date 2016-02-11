@@ -1,0 +1,29 @@
+Here are your matches:
+<br>
+<br>
+
+
+<p>@Model</p>
+
+@foreach (var CD in Model)
+{
+<ul>
+<li>
+
+  <h4>@CD.GetTitle()</h4>
+    <li>
+      @CD.GetArtist()
+    </li>
+    <li>
+      @CD.GetYear()
+    </li>
+    <li>
+      <img src="@CD.GetCover()">
+    </li>
+
+</li>
+
+</ul>
+}
+
+<p><a href="/">Back home</a></p>

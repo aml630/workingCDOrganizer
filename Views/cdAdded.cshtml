@@ -1,0 +1,20 @@
+<h1>Your music sucks!<h1>
+
+<p>This is what you added:</p>
+
+      <h4>@Model.GetTitle()</h4>
+      <ul>
+        <li>
+          @Model.GetArtist()
+        </li>
+        <li>
+          @Model.GetYear()
+        </li>
+        <li>
+          <img src="@Model.GetCover()">
+        </li>
+  </ul>
+
+
+<p><a href="/cd/new">Add better music</a></p>
+<p><a href="/">View your embarassing collection</a></p>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CD Organizer</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <h1>If you aren't going to throw out your CDs, at least organize them.</h1>
+    @if (@Model.Count == 0)
+    {
+  <h3>WHAT DO YOU MEAN YOU DON'T HAVE ANY CDS</h3>
+    }
+
+
+<p><a href="/cd/new">Add a new CD to your pathetic collection</a></p>
+<p><a href="/searchbyartist">Seach for a CD by artist</a></p>
+
+    @foreach (var CD in Model)
+    {
+  <ul>
+    <li>
+
+      <h4>@CD.GetTitle()</h4>
+        <li>
+          @CD.GetArtist()
+        </li>
+        <li>
+          @CD.GetYear()
+        </li>
+        <li>
+          <img src="@CD.GetCover()">
+        </li>
+
+    </li>
+
+  </ul>
+  }
+
+  </body>
+</html>
